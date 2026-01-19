@@ -148,7 +148,7 @@ function toggleDeletions() {
 function toggleReadingMode() {
     var textDiv = document.getElementById("text");
     if (textDiv) {
-        textDiv.classList.remove("hide-del"); // 削除切り替えと競合させない
+        textDiv.classList.remove("hide-del"); 
         textDiv.classList.toggle("reading-mode");
     }
 }
@@ -179,7 +179,7 @@ function toggleReadingMode() {
 const pages = ["index", "21r", "21v", "22r", "22v", "23r", "23v", "24r", "24v", "25r", "25v"];
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script is running!"); // これがコンソールに出れば成功
+    console.log("Script is running!"); 
 
     var path = window.location.pathname;
     var filename = path.split("/").pop();
