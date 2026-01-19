@@ -145,8 +145,6 @@ function toggleDeletions() {
 }
 
 // EXTRA: write a function that will display the text as a reading text by clicking on a button or another dropdown list, meaning that all the deletions are removed and that the additions are shown inline (not in superscript)
-
-// --- 3. 読書モードロジック (3.c) ---
 function toggleReadingMode() {
     var textDiv = document.getElementById("text");
     if (textDiv) {
@@ -159,10 +157,7 @@ function toggleReadingMode() {
     var controls = document.querySelector(".form-group");
     
     if (controls) {
-        // 重要：ボタンが消えてしまったなら、JSで作り直す必要があります。
-        // 重複を防ぐため、一度中身（プルダウン以外）をリセットして再構築します。
         
-        // プルダウンは残しつつ、ボタンを2つ追加
         if (!document.getElementById("btn-del")) {
             var btnDel = document.createElement("button");
             btnDel.id = "btn-del";
@@ -180,3 +175,33 @@ function toggleReadingMode() {
         }
     }
 })();
+
+const pages = ["index", "21r", "21v", "22r", "22v", "23r", "23v", "24r", "24v", "25r", "25v"];
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Script is running!"); // これがコンソールに出れば成功
+
+    var path = window.location.pathname;
+    var filename = path.split("/").pop();
+    var current = filename.replace(".html", "") || "index";
+    var idx = pages.indexOf(current);
+
+    var prevBtn = document.getElementById("prev");
+    var nextBtn = document.getElementById("next");
+
+    if (idx !== -1) {
+        if (nextBtn && idx < pages.length - 1) {
+            nextBtn.setAttribute('href', pages[idx + 1] + ".html");
+        } else if (nextBtn) {
+            nextBtn.style.display = "none";
+        }
+
+        if (prevBtn) {
+            if (idx === 0) {
+                prevBtn.style.display = "none";
+            } else {
+                prevBtn.setAttribute('href', pages[idx - 1] + ".html");
+            }
+        }
+    }
+});

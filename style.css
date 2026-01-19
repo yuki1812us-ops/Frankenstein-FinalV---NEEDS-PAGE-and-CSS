@@ -32,12 +32,11 @@ p {
     display: none !important;
 }
 
-/* --- 通常モード (Requirement 6): 浮かせる --- */
-/* タグ名を span.supraAdd に変更します */
+
 span.supraAdd {
     display: inline-block !important;
     position: relative !important;
-    top: -0.8em !important;           /* 物理的に浮かせる */
+    top: -0.8em !important;           
     font-size: 0.80em !important;
     text-decoration: underline !important;
     line-height: 0;
@@ -54,7 +53,7 @@ span.supraAdd {
     display: none !important;
 }
 
-/span.supraAdd /
+/* ---span.supraAdd ---*/
 #text.reading-mode span.supraAdd {
     position: static !important;
     top: 0 !important;           
@@ -64,13 +63,12 @@ span.supraAdd {
     color: #000;
 }
 
-/* --- 3.c: Reading Mode (読書モード) --- */
-/* 読書モードの時、マージンのテキストを本文の中に挿入して表示させる */
+/* --- 3.c: Reading Mode  --- */
 #text.reading-mode span.marginAdd {
-    display: inline !important;    /* 非表示を解除して表示する */
-    color: #000 !important;        /* インク色を本文と同じ黒に統一 */
-    font-style: italic;            /* マージンからの挿入であることがわかるよう斜体にする（任意） */
-    margin: 0 5px;                 /* 前後の単語との間に少し隙間を作る */
+    display: inline !important;    
+    color: #000 !important;        
+    font-style: italic;            
+    margin: 0 5px;                 
     text-decoration: none !important;
 }
 

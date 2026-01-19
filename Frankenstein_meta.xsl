@@ -28,16 +28,14 @@
                                     <!-- Counts all the add -->
                                     <xsl:value-of select="count(//tei:add)" />
                                 </li>
-                                <!-- add other list items in which you count things, such as the modifications made by Percy -->  
                                 
                                 <li>Number of corrections by Mary Shelley: 
-                                    <!-- add other list items in which you count things, such as the modifications made by Percy -->
-                                    <xsl:value-of select="count(//*[@hand='#PBS'])"/>
+                                    <xsl:value-of select="count(//*[@hand='#MWS'])"/>
                                 </li>
                                 
                                 <li>Number of corrections by Percy Shelley: 
                                     <!-- add other list items in which you count things, such as the modifications made by Percy -->
-                                     <xsl:value-of select="count(//*[@hand='#MWS'])"/>
+                                     <xsl:value-of select="count(//*[@hand='#PBS'])"/>
                                 </li>
                             </ul>
                         </div>
